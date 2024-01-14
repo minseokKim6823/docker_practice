@@ -1,9 +1,11 @@
-From node:10
+FROM node:10
 
 WORKDIR /usr/src/app
 
-COPY ./ ./
+COPY package.json ./
 
 RUN npm install
+
+COPY ./ ./
 
 CMD ["node","server.js"]
